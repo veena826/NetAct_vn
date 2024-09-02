@@ -1,0 +1,43 @@
+import(edgeR)
+import(Biobase)
+import(qvalue)
+import(fgsea)
+import(mclust)
+import(fastmatch)
+import(limma, except = plotMA)
+import(Rcpp)
+import(visNetwork)
+import(reshape2)
+import(org.Mm.eg.db)
+import(org.Hs.eg.db)
+import(AnnotationDbi)
+import(DESeq2, except = plotMA)
+importFrom(ComplexHeatmap, Heatmap)
+importFrom(entropy, discretize2d, mi.shrink)
+importFrom(infotheo, discretize, mutinformation)
+importFrom(circlize, colorRamp2)
+importFrom(grDevices, colorRampPalette)
+importFrom(stats, complete.cases, cor, kmeans, model.matrix, pnorm, sd)
+importFrom(utils, write.csv)
+importFrom(methods, as, is, new)
+
+export(
+    Preprocess_counts,
+    MicroDegs,
+    RNAseqDegs_limma,
+    RNAseqDegs_DESeq,
+    GSEA_proc_R,
+    GSEA_proc_RC,
+    TF_GSEA,
+    TF_Selection,
+    Reselect_TFs,
+    TF_Activity,
+    allNet,
+    TF_Filter,
+    TF_Filter_addgene,
+    toCPM,
+    Activity_heatmap,
+    plot_network
+)
+
+useDynLib(NetAct)
